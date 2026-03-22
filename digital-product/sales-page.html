@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Starter Kit - 5分钟搭建你的 AI 助手</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .header .subtitle {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .badge {
+            display: inline-block;
+            background: #ffd700;
+            color: #333;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        .content {
+            padding: 40px;
+        }
+        .price-section {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .price {
+            font-size: 3em;
+            color: #667eea;
+            font-weight: bold;
+        }
+        .price-note {
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .what-you-get {
+            background: #fff9e6;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        .what-you-get h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .what-you-get ul {
+            list-style: none;
+            padding: 0;
+        }
+        .what-you-get li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ffeaa7;
+        }
+        .what-you-get li:last-child {
+            border-bottom: none;
+        }
+        .testimonial {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            font-style: italic;
+        }
+        .testimonial-author {
+            margin-top: 10px;
+            font-style: normal;
+            color: #666;
+        }
+        .faq {
+            margin: 30px 0;
+        }
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+        }
+        .faq-question {
+            font-weight: bold;
+            color: #667eea;
+        }
+        .footer {
+            background: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9em;
+        }
+        .timer {
+            background: #ff4757;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI Agent Starter Kit</h1>
+            <p class="subtitle">5分钟搭建你的第一个 AI 助手 | 节省2+小时配置时间</p>
+            <span class="badge">🔥 热销中</span>
+        </div>
+        
+        <div class="content">
+            <!-- 评价 -->
+            <div class="testimonial">
+                "买过很多教程，这个是真的有用。配置好了之后每天帮我处理邮件和日程，节省了大量时间。"
+                <div class="testimonial-author">— 某科技公司创始人</div>
+            </div>
+            
+            <!-- 价格 -->
+            <div class="price-section">
+                <div class="price">¥9.9</div>
+                <div class="price-note">一次购买，永久使用 | 包含终身更新</div>
+                <div class="timer">⚡ 限时优惠</div>
+                <br>
+                <a href="#" class="btn" id="buyBtn">立即购买</a>
+            </div>
+            
+            <!-- 功能 -->
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>5分钟完成</h3>
+                    <p>一行命令，自动配置完成</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤖</div>
+                    <h3>开箱即用</h3>
+                    <p>预配置所有设置，直接可用</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📚</div>
+                    <h3>完整文档</h3>
+                    <p>详细使用指南+视频教程</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔄</div>
+                    <h3>持续更新</h3>
+                    <p>购买后免费更新所有新功能</p>
+                </div>
+            </div>
+            
+            <!-- 包含内容 -->
+            <div class="what-you-get">
+                <h3>🎁 你将获得</h3>
+                <ul>
+                    <li>✅ 一键配置脚本 (basic-setup.sh)</li>
+                    <li>✅ 每日简报生成器 (daily-brief.sh)</li>
+                    <li>✅ 社交媒体内容生成器</li>
+                    <li>✅ 系统监控脚本</li>
+                    <li>✅ AI 身份模板 (SOUL.md)</li>
+                    <li>✅ 常用提示词模板库</li>
+                    <li>✅ 详细使用文档 (中文)</li>
+                    <li>✅ 疑难解答指南</li>
+                    <li>✅ 永久更新权限</li>
+                </ul>
+            </div>
+            
+            <!-- 使用场景 -->
+            <h2>💡 谁适合这个工具包？</h2>
+            <ul style="margin: 20px 0; padding-left: 20px;">
+                <li>想用 AI 自动化工作流，但不想花时间配置的人</li>
+                <li>技术创业者，需要 AI 助手处理日常任务</li>
+                <li>需要 24/7 在线 AI 助手的人</li>
+                <li>想要搭建自己 AI Agent 但不知从何开始的人</li>
+            </ul>
+            
+            <!-- FAQ -->
+            <div class="faq">
+                <h2>❓ 常见问题</h2>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: 需要技术背景吗？</div>
+                    <div>A: 不需要。只需会使用终端复制粘贴命令即可。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: 支持 Mac/Windows/Linux 吗？</div>
+                    <div>A: 支持 macOS 和 Linux，Windows 需要 WSL。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: 购买后可以退款吗？</div>
+                    <div>A: 7天内无理由退款。</div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q: 如何获取产品？</div>
+                    <div>A: 付款后自动收到下载链接和提取码。</div>
+                </div>
+            </div>
+            
+            <!-- 再次购买按钮 -->
+            <div class="price-section">
+                <div class="price">¥9.9</div>
+                <div class="price-note">节省 2+ 小时配置时间</div>
+                <a href="#" class="btn" id="buyBtn2">立即购买</a>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>📧 联系: freedom@eieai.dev</p>
+            <p>🔗 GitHub: <a href="https://github.com/Eieai001/eieai-freedom" style="color: #667eea;">Eieai001/eieai-freedom</a></p>
+        </div>
+    </div>
+    
+    <script>
+        // 购买按钮 - 跳转到收款页面
+        document.getElementById('buyBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            // TODO: 替换为实际收款链接
+            alert('请添加你的收款链接！\n\n方案1: Gumroad\n方案2: Ko-fi\n方案3: 微信/支付宝收款码');
+        });
+        
+        document.getElementById('buyBtn2').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.getElementById('buyBtn').click();
+        });
+    </script>
+</body>
+</html>
