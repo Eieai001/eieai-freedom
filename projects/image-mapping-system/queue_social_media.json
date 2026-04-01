@@ -1,0 +1,36 @@
+[
+  {
+    "id": "6e0396a42e6fd767",
+    "file_path": "/Users/eieai/mymemory/BaiduNetdisk-backup/来自：MEIZU 20/Screenshots/S50519-14251301_com.xingin.xhs.png",
+    "file_name": "S50519-14251301_com.xingin.xhs.png",
+    "extension": ".png",
+    "size_bytes": 828405,
+    "source_device": "meizu",
+    "category": "social_media",
+    "date_from_filename": "0519-14-25",
+    "modified_time": "2026-03-19T01:06:49.826145",
+    "status": "pending",
+    "processed_at": null,
+    "extracted_text": null,
+    "description": null,
+    "tags": [],
+    "business_relevance": null
+  },
+  {
+    "id": "71709aff9994cd95",
+    "file_path": "/Users/eieai/mymemory/BaiduNetdisk-backup/xiaomi21091116AC/DCIM/Screenshots/Screenshot_2024-04-24-04-35-36-494_com.xingin.xhs.jpg",
+    "file_name": "Screenshot_2024-04-24-04-35-36-494_com.xingin.xhs.jpg",
+    "extension": ".jpg",
+    "size_bytes": 607515,
+    "source_device": "xiaomi",
+    "category": "social_media",
+    "date_from_filename": "2024-04-24",
+    "modified_time": "2026-03-19T00:24:20.973839",
+    "status": "pending",
+    "processed_at": null,
+    "extracted_text": null,
+    "description": null,
+    "tags": [],
+    "business_relevance": null
+  }
+]

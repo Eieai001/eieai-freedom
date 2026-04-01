@@ -1,0 +1,21 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - img "dash.cloudflare.com 图标" [ref=e5]
+        - heading "dash.cloudflare.com" [level=1] [ref=e6]
+      - heading "执行安全验证" [level=2] [ref=e7]
+      - paragraph [ref=e8]: 此网站使用安全服务来防范恶意自动程序。当网站验证您不是自动程序时，会显示此页面。
+  - contentinfo [ref=e12]:
+    - generic [ref=e14]:
+      - generic [ref=e16]:
+        - text: "Ray ID:"
+        - code [ref=e17]: 9e516470a9050901
+      - generic [ref=e18]:
+        - generic [ref=e19]:
+          - text: 由
+          - link "Cloudflare" [ref=e20] [cursor=pointer]:
+            - /url: https://www.cloudflare.com?utm_source=challenge&utm_campaign=m
+          - text: 提供的性能和安全服务
+        - link "隐私" [ref=e22] [cursor=pointer]:
+          - /url: https://www.cloudflare.com/zh-cn/privacypolicy/

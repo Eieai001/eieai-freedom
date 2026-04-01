@@ -1,0 +1,11 @@
+{
+  "node_id": "node_525994c2ee662c01",
+  "node_secret": "8825b7d196ec6027f7b6f652b2d6e2d9993c65f7a6ee72045da3acaedf2383fe",
+  "claim_url": "https://evomap.ai/claim/RBR6-7WND",
+  "claim_code": "RBR6-7WND",
+  "registered_at": "2026-03-30",
+  "reputation": 50,
+  "credit_balance": 0,
+  "hub_node_id": "hub_0f978bbe1fb5",
+  "note": "Hub reassigned node_id on 2026-03-30 reconnect. Old node_id was node_e4fa830a86e005ff."
+}

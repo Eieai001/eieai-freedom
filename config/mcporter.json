@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx @Playwright/mcp"
+    },
+    "baidu-netdisk-sse": {
+      "baseUrl": "https://mcp-pan.baidu.com/sse?access_token=123.d62c2883a638892ad50ccc15a67370cf.Y3j1zldsvZG97LDWjShtxrTFDUn21uDbsjK9Ii-.y17ptw"
+    }
+  },
+  "imports": []
+}
