@@ -82,18 +82,17 @@ _长期重要记忆，持续更新_
 
 | 项目 | 值 |
 |------|-----|
-| IP | 144.24.73.140 |
+| IP | <oracle-arm-ip> |
 | 用户名 | ubuntu |
-| SSH Key | `~/.ssh/id_ed25519` |
+| SSH Key | `<oracle-arm-ssh-key-path>` |
 | hapi 端口 | 3006 |
 
 ### Bitwarden 快速使用
 
 **登录 Bitwarden：**
 ```bash
-bw login catheycelaniclw63@gmail.com
-# 输入密码: r9MmE-AFU8563iu
-bw unlock r9MmE-AFU8563iu
+bw login
+bw unlock
 export BW_SESSION="..."  # 解锁后显示的 session key
 ```
 
@@ -127,10 +126,10 @@ bw get item "项目名称或ID"
 ### 基础连接
 | 项目 | 值 |
 |------|-----|
-| IP | 144.24.73.140 |
+| IP | <oracle-arm-ip> |
 | 用户 | ubuntu |
-| SSH Key | ~/.ssh/id_ed25519 |
-| SSH 命令 | `ssh -i ~/.ssh/id_ed25519 ubuntu@144.24.73.140` |
+| SSH Key | <oracle-arm-ssh-key-path> |
+| SSH 命令 | `ssh -i <oracle-arm-ssh-key-path> ubuntu@<oracle-arm-ip>` |
 
 ### 已安装软件
 - Claude Code 2.1.87 → 路径: ~/.local/bin/claude
@@ -141,30 +140,30 @@ bw get item "项目名称或ID"
 ### Happy 配置
 - Happy auth: ✅ 已完成
 - Happy daemon: 需要时启动
-- 启动命令: `ssh ubuntu@144.24.73.140 happy daemon start`
-- 状态检查: `ssh ubuntu@144.24.73.140 happy daemon status`
+- 启动命令: `ssh ubuntu@<oracle-arm-ip> happy daemon start`
+- 状态检查: `ssh ubuntu@<oracle-arm-ip> happy daemon status`
 - 设置文件: ~/.happy/settings.json
 - 日志: ~/.happy/logs/*.log
 
 ### Cloudflare Tunnel
 - ARM 上 cloudflared 已安装并作为服务运行
-- Tunnel token: eyJhIjoiMGRmYjVhNTIyNzhlNjk1NGIwMTI1ZWU0MGExMGE5YmYi...
+- Tunnel token: [stored-in-bitwarden-cloudflare-tunnel-token]
 - 已有路由: memos.eieai.us.ci → localhost:8081
 - 需要添加: arm.eieai.us.ci → localhost:3006 (hapi)
 
 ### 快速检查清单
 ```bash
 # 1. 检查 ARM 状态
-ssh ubuntu@144.24.73.140 "happy daemon status; ps aux | grep happy | grep -v grep"
+ssh ubuntu@<oracle-arm-ip> "happy daemon status; ps aux | grep happy | grep -v grep"
 
 # 2. 启动 Happy daemon
-ssh ubuntu@144.24.73.140 "happy daemon start"
+ssh ubuntu@<oracle-arm-ip> "happy daemon start"
 
 # 3. 查看 Happy 日志
-ssh ubuntu@144.24.73.140 "tail -30 ~/.happy/logs/*.log | tail -50"
+ssh ubuntu@<oracle-arm-ip> "tail -30 ~/.happy/logs/*.log | tail -50"
 
 # 4. 重启 Happy daemon
-ssh ubuntu@144.24.73.140 "pkill -f 'happy.*daemon'; sleep 2; happy daemon start"
+ssh ubuntu@<oracle-arm-ip> "pkill -f 'happy.*daemon'; sleep 2; happy daemon start"
 ```
 
 ### 已知问题
