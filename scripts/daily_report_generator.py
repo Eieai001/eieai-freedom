@@ -69,20 +69,24 @@ def get_instance_status(ip, ssh_key):
 
 def memos_create(content):
     """通过 Memos API 创建备忘录"""
+    import tempfile
     payload = {"content": content, "visibility": "PRIVATE"}
     try:
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
+            json.dump(payload, f)
+            f.flush()
+            tf = f.name
         result = subprocess.run(
             ['curl', '-s', '-X', 'POST', f'{MEMOS_URL}/memos',
              '-H', f'Authorization: Bearer {MEMOS_PAT}',
              '-H', 'Content-Type: application/json',
-             '--noproxy', '*', '-d', '-'],
-            input=json.dumps(payload),
-            capture_output=True, text=True, timeout=15
+             '-d', f'@{tf}'],
+            capture_output=True, text=True, timeout=20
         )
+        import os; os.unlink(tf)
         resp = json.loads(result.stdout)
         if 'name' in resp:
-            uid = resp['name'].replace('memos/', '')
-            return True, uid
+            return True, resp['name'].replace('memos/', '')
         return False, resp.get('message', 'Unknown error')
     except Exception as e:
         return False, str(e)
