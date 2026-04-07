@@ -1,1 +1,8 @@
-{"lastChecks":{"email":null,"calendar":null,"weather":null,"arm_script":1772485200,"codex_issue":1772485920},"lastHeartbeat":1772485920}
+{
+  "lastChecks": {
+    "weather": 1743611100,
+    "baidu_mcp": 1743561000,
+    "cron_status": 1743557400
+  },
+  "lastHeartbeat": 1743974520
+}
