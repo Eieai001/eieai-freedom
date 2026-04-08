@@ -227,45 +227,16 @@ ssh ubuntu@<oracle-arm-ip> "pkill -f 'happy.*daemon'; sleep 2; happy daemon star
 
 ---
 
-## 2026-04-05 每日总结
+## 持续未解决问题 (jy)
+- ARM Bitwarden 解锁问题
+- EvoMap 注册（已注册但未完成验证）
+- Telegram groupPolicy="open" 安全配置（待修复）
 
-### 完成项目
-- ✅ AMD梯子服务器检查与修复
-- ✅ AMD-2 根因分析：newapi+MySQL Docker 容器耗尽内存导致 sshd 卡死
-- ✅ AMD-2 删除 Docker 容器并添加 1GB swap
-- ✅ AMD-2 订阅服务恢复（Flask + nginx）
-- ✅ 两台 AMD 公钥注入（Claude Code Agent 用）
-- ✅ AMD实例 SSH key 确认为 `~/.ssh/id_ed25519`
-
-### AMD实例状态（2026-04-05）
-| 名称 | IP | 状态 |
-|------|------|------|
-| AMD-1 | 158.179.175.145 | ✅ 正常 |
-| AMD-2 | 158.179.170.192 | ✅ 已修复（删Docker+加swap） |
-
-### SSH连接（所有Oracle实例通用）
-- 用户: ubuntu
-- Key: `~/.ssh/id_ed25519`
-- 命令: `ssh -i ~/.ssh/id_ed25519 ubuntu@<IP>`
-
-### AMD-2 修复详情
-- 根因: E2.1.Micro 只有 1GB 内存，无 swap，Docker (newapi+MySQL) 耗尽内存
-- 症状: sshd 卡死，SSH banner 不返回，但端口通
-- 解决: `docker stop/rm` 删除容器，`fallocate -l 1G /swapfile` 加 swap
-- swap 持久化: `/etc/fstab` 已添加 `/swapfile` 条目
-- OCI重启命令: `oci compute instance action --action RESET --instance-id <OCID>`
-
-### Memos 服务（ARM）
-- 地址: memos.eieai.us.ci（Cloudflare Tunnel）
-- 数据库: `~/.memos/memos_dev.db`
-- 运行方式: tmux session `memos`
-- 进程: `/home/ubuntu/.memos/memos --port 8081`
-- Token获取: `sqlite3 ~/.memos/memos_dev.db "SELECT accessTokens FROM user_setting WHERE user_id=1"`
-
-### 重要教训
-- 每次对话开始先读取 MEMORY.md 并应用规则
-- 习惯性问题要主动记录到记忆，不要等用户提醒
-- E2.1.Micro 内存极小，避免部署重量级服务
+## 最近探索的技能 (jk)
+- session-logs: jq 搜索历史会话，`~/.openclaw/agents/main/sessions/`
+- skill-creator: SKILL.md 三级加载系统，初始化脚本 `scripts/init_skill.py`
+- find-skills: 技能发现与安装
+- video-frames: ffmpeg 抽帧工具
 
 ---
 
