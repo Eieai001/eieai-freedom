@@ -1,12 +1,13 @@
 # OpenClaw cron template for daily AI infra summary
-# Replace HH MM with your desired 24h time, then load with:
+# Load with:
 #   openclaw cron load ~/.openclaw/cron/daily-ai-infra-summary
 # Required env before execution:
 #   export MEMOS_BASE_URL="https://memos.eieai.us.ci"
 #   export MEMOS_TOKEN="..."
 # Optional:
-#   export ARM_HOST="ubuntu@144.24.73.140"
+#   export ARM_HOST="ubuntu@<oracle-arm-ip>"
 #
+# Runs daily at 02:00 local time.
 # Example:
-# 15 21 * * * /bin/zsh -lc 'export MEMOS_BASE_URL="https://memos.eieai.us.ci"; export MEMOS_TOKEN="..."; /Users/eieai/.openclaw/workspace-main/projects/freedom/daily-brief-automation/daily-summary-to-memos.sh'
-MM HH * * * /bin/zsh -lc '/Users/eieai/.openclaw/workspace-main/projects/freedom/daily-brief-automation/daily-summary-to-memos.sh'
+# 0 2 * * * /bin/zsh -lc 'export MEMOS_BASE_URL="https://memos.eieai.us.ci"; export MEMOS_TOKEN="..."; /Users/eieai/.openclaw/workspace-main/projects/freedom/daily-brief-automation/daily-summary-to-memos.sh'
+0 2 * * * /bin/zsh -lc '/Users/eieai/.openclaw/workspace-main/projects/freedom/daily-brief-automation/daily-summary-to-memos.sh'

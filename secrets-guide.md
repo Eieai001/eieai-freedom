@@ -31,6 +31,7 @@ bw get item "项目名称"
 | Mac hapi token | W9fwzOvvdD-PjzAMj_5o1Z3KnpWj6C83zrCaiR1Lee8 |
 | Cloudflare Tunnel Token | ARM tunnel token |
 | GitHub Token | GitHub PAT |
+| **Memos PAT** | `memos_pat_SNWmx8pERXcFPZVdQcDtGnatmUZ18Yq0` |
 
 ## 跨平台
 - Bitwarden 支持: macOS, Linux, Windows, iOS, Android

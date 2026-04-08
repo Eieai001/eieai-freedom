@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "baidu-netdisk": {
+      "command": "/opt/homebrew/bin/uv",
+      "args": [
+        "--directory",
+        "/Users/eieai/.mcp/official-baidu-netdisk-sdk/netdisk-mcp-server-stdio",
+        "run",
+        "netdisk.py"
+      ],
+      "env": {
+        "BAIDU_NETDISK_ACCESS_TOKEN": "123.d62c2883a638892ad50ccc15a67370cf.Y3j1zldsvZG97LDWjShtxrTFDUn21uDbsjK9Ii-.y17ptw"
+      },
+      "type": "stdio",
+      "keepAlive": true
+    },
+    "baidu-netdisk-sse": {
+      "type": "sse",
+      "url": "https://mcp-pan.baidu.com/sse?access_token=123.d62c2883a638892ad50ccc15a67370cf.Y3j1zldsvZG97LDWjShtxrTFDUn21uDbsjK9Ii-.y17ptw"
+    }
+  }
+}
